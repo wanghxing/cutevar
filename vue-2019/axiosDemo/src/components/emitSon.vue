@@ -1,7 +1,8 @@
 <template>
   <div class="container">
+    <!-- <br> -->
+    <button @click="emitEvent">点击我看console</button>
     <br>
-    <button @click="emitEvent">点击我</button>
   </div>
 </template>
 <script>
