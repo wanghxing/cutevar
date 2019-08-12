@@ -8,7 +8,9 @@
 
 	npm run dev
 
-# vue-base vue基础知识 指令 路由 等
+# 内容说明：
+  
+  vue-base vue基础知识 指令 路由 等
    
   Vuex-master vuex相关
 
