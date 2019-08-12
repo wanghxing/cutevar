@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-model 实例</title>
+    <script src="../assets/js/vue.js"></script>
+</head>
+
+<body>
+    <h1>v-model 数据源绑定 实例</h1>
+    <hr>
+    <div id="myApp">
+        <p>原始文本信息：{{message}}</p>
+        <h3>文本框</h3>
+        <p>
+            注意： .lazy：取代 input 监听 change 事件。 .number：输入字符串转为数字。 .trim：输入去掉首尾空格。
+        </p>
+        <p>v-model:<input type="text" v-model="message"></p>
+        <p>v-model.lazy:<input type="text" v-model.lazy="message"></p>
+        <p>v-model.number:<input type="text" v-model.number="message"></p>
+        <p>v-model.trim:<input type="text" v-model.trim="message"></p>
+        <p><input @input="handle"></p>
+        <hr>
+        <h3>文本域</h3>
+        <textarea cols="30" rows="10" v-model="message"></textarea>
+        <hr>
+        <h3>多选框绑定一个值</h3>
+        <input type="checkbox" id="isTrue" v-model="isTrue">
+        <label for="isTrue">{{isTrue}}</label>
+        <hr>
+        <h3>多选框绑定数组</h3>
+        <p>
+            <input type="checkbox" id="jsPang" value="jsPang" v-model="web_names">
+            <label for="jsPang">jsPang</label>
+            <input type="checkbox" id="Panda" value="Panda" v-model="web_names">
+            <label for="Panda">Panda</label>
+            <input type="checkbox" id="panpan" value="panpan" v-model="web_names">
+            <label for="panpan">panpan</label>
+        </p>
+        <p>{{web_names}}</p>
+        <hr>
+        <h3>单选框绑定</h3>
+        <p>
+            <input type="radio" id="one" value="男" v-model="sex">
+            <label for="one">男</label>
+            <input type="radio" id="two" value="女" v-model="sex">
+            <label for="two">女</label>
+        </p>
+        <p>你选择的性别是：{{sex}}</p>
+
+        <hr>
+        <hr>
+        <h3>下拉选择器中的单选</h3>
+        <select v-model="selected1">
+          <option disabled value="">请选择</option>
+          <option>A</option>
+          <option value="b">B</option>
+          <option>C</option>
+        </select>
+        <span>选择的是: {{ selected1 }}</span>
+
+        <hr>
+        <h3>下拉选择器中的多选</h3>
+        <!-- 对于下拉选择器中的多选，在操作过程中：
+对于 windows：按住 Ctrl 按钮来选择多个选项。
+对于 Mac：按住 command 按钮来选择多个选项。 -->
+        <select v-model="selected2" multiple>
+          <option>A</option>
+          <option value="b">B</option>
+          <option>C</option>
+        </select>
+        <span>选择的是: {{ selected2 }}</span>
+        <br>
+        <h3>在业务中， &lt;option&gt;经常用v-for动态输出，value是用v-bind来动态输出的，例如：
+        </h3>
+        <select v-model="selected">
+          <option disabled value="">请选择</option>
+          <option v-for="option in options" :value="option.value">{{option.text}}
+          </option>
+        </select>
+        <span>选择的是: {{ selected }}</span>
+
+
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: "#myApp",
+            data: {
+                message: "Hello World",
+                isTrue: true,
+                web_names: [],
+                sex: "男",
+                selected1: "",
+                selected2: [],
+                selected: "",
+                options: [{
+                    text: "HTML",
+                    value: "html"
+                }, {
+                    text: "JavaScript",
+                    value: "js"
+                }, {
+                    text: "CSS",
+                    value: "css"
+                }]
+            },
+            methods: {
+                handle: function(e) {
+                    this.message = e.target.value;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

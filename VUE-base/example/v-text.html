@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-text & v-html</title>
+  <script src="../assets/js/vue.js"></script>
+</head>
+
+<body>
+  <h1>v-text & v-html 实例</h1>
+  <h4>区别：v-text只输出内容， v-html可输出带标签的内容（但是容易受到xss攻击）</h4>
+  <hr>
+  <div id="myApp">
+    <!-- <span>{{message}}</span> -->
+    <span v-text="message"></span>
+    <span v-text="dodo"></span>
+    <span v-html="dodo"></span><!-- XSS攻击 -->
+  </div>
+
+  <script type="text/javascript">
+    var app = new Vue({
+      el: "#myApp",
+      data: {
+        message: "Hello World-v-text",
+        dodo:"<h2>Hello World-v-html</h2>"
+      }
+    })
+  </script>
+</body>
+
+</html>

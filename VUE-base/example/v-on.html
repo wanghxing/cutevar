@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-on 实例</title>
+  <script src="../assets/js/vue.js"></script>
+</head>
+
+<body>
+  <h1>v-on：绑定事件监听器</h1>
+  <hr>
+  <div id="myApp">
+  本场比赛得分：{{score}}
+  <p>
+    <button v-on:click="jiafen">加分</button>
+    <button v-on:click="jianfen">减分</button>
+    <br/>
+    <input type="text" v-on:keyup.enter="onEnter" v-model="score2">
+  </p>
+  </div>
+
+  <script type="text/javascript">
+    var app = new Vue({
+      el: "#myApp",
+      data: {
+        score: 0,
+        score:1
+      },
+      methods:{
+        jiafen:function(){
+          this.score++;
+        },
+        jianfen: function () {
+          this.score--;
+        },
+        onEnter:function(){
+          this.score = this.score + parseInt(this.score2);
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

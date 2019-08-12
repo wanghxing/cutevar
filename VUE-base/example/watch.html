@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>watch option</title>
+  <script src="../assets/js/vue.js"></script>
+</head>
+
+<body>
+  <h1>watch option</h1>
+  <hr>
+  <div id="myApp">
+    <p>今日温度：{{temperature}}</p>
+    <p>穿衣建议：{{chuanyi}}</p>
+    <p>
+      <button @click="wup">升高温度</button>
+      <button @click="wdown">降低温度</button>
+    </p>
+  </div>
+
+  <script type="text/javascript">
+    var chuanyiArray=['T恤短袖','夹克长裙','棉衣羽绒服'];
+
+    var app = new Vue({
+      el: "#myApp",
+      data: {
+        temperature: 15,
+        chuanyi:'夹克长裙'
+      },
+      methods:{
+        wup:function(){
+          this.temperature+=5;
+        },
+        wdown: function () {
+          this.temperature -= 5;
+        }
+      },
+      // 1. 构造器里的监控数据
+      /* watch:{
+        temperature:function(newVal,oldVal){
+          if(newVal >= 26){
+            this.chuanyi = chuanyiArray[0];
+          }else if (newVal <26 && newVal >0) {
+            this.chuanyi = chuanyiArray[1];
+          }else {
+            this.chuanyi = chuanyiArray[2];
+          }
+
+        }
+      } */
+    })
+
+    // 2. 用实例属性写watch监控
+    /* watch写在构造器的外部，这样的好处就是降低我们程序的耦合度，使程序变的灵活 */
+    app.$watch('temperature', function(newVal,oldVal){
+      if (newVal >= 26) {
+        this.chuanyi = chuanyiArray[0];
+      } else if (newVal < 26 && newVal > 0) {
+        this.chuanyi = chuanyiArray[1];
+      } else {
+        this.chuanyi = chuanyiArray[2];
+      }
+    })
+  </script>
+</body>
+
+</html>

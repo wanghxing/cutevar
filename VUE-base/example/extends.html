@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Extends 扩展选项</title>
+  <script src="../assets/js/vue.js"></script>
+</head>
+
+<body>
+  <h1>Extends 扩展选项</h1>
+  <hr>
+  <div id="myApp">
+    
+    <!-- {{num}} -->
+    ${num}
+    <p>
+      <button @click="add">add</button>
+    </p>
+  </div>
+
+  <script type="text/javascript">
+    var extendsObj = {
+      updated:function(){
+        console.log('我是扩展出来的updated');
+      },
+      methods:{
+        add:function(){
+          console.log('我是扩展出来的方法');
+          this.mun++;
+        }
+      }
+    }
+    
+
+    var app = new Vue({
+      el: "#myApp",
+      data: {
+        num: 1
+      },
+      methods: {
+        add: function () {
+          console.log("我是原生的方法");
+          this.num++;
+        }
+      },
+      updated: function () {
+        console.log("我是原生的updated");
+        /* 注意：混入的先执行，原生的后执行！！ */
+      },
+      // 构造器里的混入
+      extends:extendsObj,
+      delimiters:['${','}']
+
+    })
+
+    /* PS：当扩展方法和构造器的方法重名时，扩展的方法无法展现，也就是不起作用。 */
+  </script>
+</body>
+
+</html>
