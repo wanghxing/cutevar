@@ -41,11 +41,11 @@
     <br>
     <hr>
 
-    <div>
+    <!-- <div>
       <p>响应1：{{res1}}</p>
       <p>响应2：{{res2}}</p>
       <button @click="sendAjax">发请求</button>
-    </div>
+    </div> -->
 
     <br>
     <hr>
@@ -68,8 +68,8 @@ export default {
       timestamp: 1558365345000,
       errored:false,
       loading:true,
-      res1:'',
-      res2:''
+      res1: '',
+      res2: ''
     }
   },
   methods:{
@@ -80,28 +80,27 @@ export default {
     },
     sendAjax:function() {
       // 让组件具备axios对象的引用
-      /* axios.get('http://localhost:8081/')
-      .then(function(res){
-        console.log(res);
+      /* axios.get('http://localhost:8060/')
+      .then(function(res1){
+        console.log(res1, res1.data.time.updated);
       })
       .catch(function(err){
         console.log(err);
-      }) */
-
-      axios.defaults.baseURL = "http://localhost:8081/";
+      })
+      axios.defaults.baseURL = "http://localhost:8060/";
       // 所有请求自带的头信息
       axios.headers = {}; // 覆盖原本默认头
       // 走默认头，修改个别
       axios.defaults.headers.accept = 'afb';
 
       var q1 = axios.get('');
-      var q2 = axios.post('add','a=1');
+      var q2 = axios.get('page01','');
 
       axios.all([q1,q2])
       .then(axios.spread((res1,res2)=>{
         this.res1 = res1.data;
         this.res2 = res2.data;
-      }))
+      })) */
     }
   },
   filters: {
@@ -117,7 +116,8 @@ export default {
         console.log(error)
         this.errored = true
       })
-      .finally(() => this.loading = false)
+      .finally(() => this.loading = false);
+
   }
 }
 
