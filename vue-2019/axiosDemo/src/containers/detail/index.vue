@@ -41,7 +41,7 @@
         this.$router.go(-1);
       },
       countdown: function () {
-        const end = Date.parse(new Date('2019-04-30'))
+        const end = Date.parse(new Date('2019-10-01'))
         const now = Date.parse(new Date())
         const msec = end - now
         let day = parseInt(msec / 1000 / 60 / 60 / 24)
