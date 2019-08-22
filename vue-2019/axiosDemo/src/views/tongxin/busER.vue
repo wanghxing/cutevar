@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <!-- https://www.jianshu.com/p/8e705bb0bb4b -->
     <!-- 详细说 非父子组件通信 -->
      <this-input :msg="parentMsg" v-on:message="receiveMsg"></this-input>
      <this-dialog></this-dialog>

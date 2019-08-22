@@ -1,5 +1,7 @@
 <template>
   <div class="container">
+    <!-- https://www.jianshu.com/p/8e705bb0bb4b -->
+    
     <!-- 父子组件通信 -->
     <!-- 注：在命名自定义事件的名称的时候最好采用小写加短横线分割的命名方式 -->
     <br>
