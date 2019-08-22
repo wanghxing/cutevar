@@ -15,6 +15,9 @@
       注意：router/index.js里 path:'/' 路径一个斜杠，即显示当前页，App.vue页面可以不加router-link, 适合首页
      -->
     <router-link class="linkS" to="/demo01">Demo01 建路由及axios filter</router-link>
+    <router-link class="linkS" to="/one01">axios的简单使用 </router-link>
+    <router-link class="linkS" to="/one02">v-cloak filter </router-link>
+    <router-link class="linkS" to="/mock-demo">mock 模拟增删查改 </router-link>
     <br>
     <!-- <router-link class="linkS" to="/page01">page01 玩玩router</router-link> -->
     <br>
@@ -43,10 +46,13 @@
     <router-link class="linkS" to="/bus">非父子组件通信 中央事件总线bus</router-link>
     <router-link class="linkS" to="/bus2">非父子组件通信2 父链和子组件索引</router-link>
     <router-link class="linkS" to="/buser">非父子组件通信2.2 父链和子组件索引</router-link>
+
     <router-link class="linkS" to="/vmodel">在自定义组件上使用v-model</router-link>
     <br>
     <br>
     <router-link class="linkS" to="/emit-demo">$emit的用法</router-link>
+    <router-link class="linkS" to="/ref-demo">$ref的用法</router-link>
+    <router-link class="linkS" to="/on-demo">$on的用法 （兄弟组件之间）</router-link>
 
    
     <br>
