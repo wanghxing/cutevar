@@ -34,7 +34,8 @@
     },
     computed: {
       changeone:function(){
-          return ++this.titleOne.one
+          console.log('子组件给one的值自加1操作');
+          return ++this.counter.one
       }
     }
   }
