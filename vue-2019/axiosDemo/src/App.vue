@@ -58,4 +58,8 @@ button {border:none;outline: none;background:none;}
   min-width:100px;
   margin-top:10px;
 }
+
+.clearfix:after{content:'.';display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{*zoom:1;}
+.clearfix .clear{_height:0px;}
 </style>

@@ -53,6 +53,10 @@
     <router-link class="linkS" to="/emit-demo">$emit的用法</router-link>
     <router-link class="linkS" to="/ref-demo">$ref的用法</router-link>
     <router-link class="linkS" to="/on-demo">$on的用法 （兄弟组件之间）</router-link>
+    <br>
+    <br>
+    <router-link class="linkS" to="/news-index">vue+mockjs</router-link>
+    <router-link class="linkS" to="/news-detail">vue+mockjs 详情页</router-link>
 
    
     <br>

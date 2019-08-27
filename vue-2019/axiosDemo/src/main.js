@@ -14,6 +14,9 @@ Vue.config.productionTip = false
 Vue.prototype.$http = axios; //全局定义axios $http
 // Vue.prototype.$EventBus = new Vue()  //全局定义事件总线$EventBus
 
+// 引入mockjs
+require('./mock.js')
+
 // 全局自定义指令
 Vue.directive("focus", {
     inserted: function(el) {
@@ -27,4 +30,10 @@ new Vue({
     router,
     components: { App },
     template: '<App/>'
+})
+
+// news里用,也可写在Newslist.vue里
+// 常用的时间整理过滤器 getYMD
+Vue.filter('getYMD', function(input) {
+    return input.split(' ')[0];
 })

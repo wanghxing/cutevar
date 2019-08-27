@@ -67,6 +67,7 @@
       getData(){
          axios.get('/api/index.json').then((res)=>{
               if(res.status==200){
+                console.log(res)
                 this.list=res.data.list;
               }
          }).catch((error)=>{

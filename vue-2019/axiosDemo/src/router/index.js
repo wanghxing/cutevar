@@ -35,6 +35,10 @@ import emitdemo from '@/views/emitdemo'
 import refdemo from '@/views/refdemo'
 import ondemo from '@/views/ondemo'
 
+// mock+vue用法
+import newsIndex from '@/views/news/Index'
+import newsDetail from '@/views/news/Newsdetail'
+
 
 Vue.use(Router)
 
@@ -171,6 +175,18 @@ export default new Router({
             path: '/on-demo',
             name: 'on-demo',
             component: ondemo
+        },
+        // mock+vue
+        {
+            path: '/news-index',
+            name: 'news-index',
+            component: newsIndex
+        },
+        // mock+vue newsDetail
+        {
+            path: '/news-detail',
+            name: 'news-detail',
+            component: newsDetail
         }
     ]
 })
