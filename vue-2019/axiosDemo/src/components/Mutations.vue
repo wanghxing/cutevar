@@ -27,7 +27,8 @@
     },
     store,
     conputed: {
-      ...mapState([
+      //...对象展开符的扩展 ...mapstate就是将mapstate对象混入到computed对象中
+      ...mapState([ 
         'count'
       ])
     },
