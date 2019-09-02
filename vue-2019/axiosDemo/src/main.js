@@ -11,6 +11,7 @@ Vue.use(VideoPlayer)
 
 Vue.config.productionTip = false
 
+// 配置Vue原型 （在任何组件中都可以正常使用axios）
 Vue.prototype.$http = axios; //全局定义axios $http
 // Vue.prototype.$EventBus = new Vue()  //全局定义事件总线$EventBus
 

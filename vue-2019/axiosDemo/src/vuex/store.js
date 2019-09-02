@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
+// 设置属性
 // 1. 现在我们store.js文件里增加一个常量对象。
 const state = {
     count: 1,
@@ -13,6 +14,7 @@ const state = {
     ]
 }
 
+// 改变属性状态
 // 4. 在store.js文件中加入两个改变state的方法。
 const mutations = {
     add(state) {
@@ -29,6 +31,7 @@ const mutations = {
     }
 }
 
+// 获取属性的状态
 const getters = {
     count2: function(state) {
         return state.count2 += 100;
@@ -44,6 +47,7 @@ const getters = {
     }
 }
 
+// 应用mutations
 const actions = {
     /* increment(context) {
         context.commit('increment')
@@ -85,5 +89,6 @@ const actions = {
 export default new Vuex.Store({
     state,
     mutations,
-    getters
+    getters,
+    actions
 })

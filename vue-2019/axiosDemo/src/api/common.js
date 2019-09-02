@@ -1,6 +1,7 @@
 import axios from "axios"
 import Vue from 'vue'
 
+// 配置默认请求头部， content-type为指定类型
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 
 // 请求拦截器
