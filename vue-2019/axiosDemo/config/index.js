@@ -9,7 +9,7 @@ module.exports = {
 
         // Paths
         assetsSubDirectory: 'static',
-        assetsPublicPath: '/',
+        assetsPublicPath: './', // 之前是 '/'
         proxyTable: {
             "/api": {
                 target: "http://localhost:8060", // 有问题连不上
@@ -47,12 +47,12 @@ module.exports = {
 
     build: {
         // Template for index.html
-        index: path.resolve(__dirname, '../dist/index.html'),
+        index: path.resolve(__dirname, '../docs/index.html'),   //之前是 '../dist/index.html'
 
         // Paths
-        assetsRoot: path.resolve(__dirname, '../dist'),
+        assetsRoot: path.resolve(__dirname, '../docs'),  // 之前是 '../dist'
         assetsSubDirectory: 'static',
-        assetsPublicPath: '/',
+        assetsPublicPath: './',  // 之前是 '/'
 
         /**
          * Source Maps
