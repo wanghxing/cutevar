@@ -47,10 +47,10 @@ module.exports = {
 
     build: {
         // Template for index.html
-        index: path.resolve(__dirname, '../index.html'), //之前是 '../dist/index.html' -> ../docs/index.html
+        index: path.resolve(__dirname, '../dist/index.html'), //之前是 '../dist/index.html' -> ../docs/index.html
 
         // Paths
-        assetsRoot: path.resolve(__dirname, '../'), // 之前是 '../dist' -> ../docs
+        assetsRoot: path.resolve(__dirname, '../dist'), // 之前是 '../dist' -> ../docs
         assetsSubDirectory: 'static',
         assetsPublicPath: './', // 之前是 '/' -> ./
 
