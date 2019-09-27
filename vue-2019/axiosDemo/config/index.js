@@ -9,7 +9,7 @@ module.exports = {
 
         // Paths
         assetsSubDirectory: 'static',
-        assetsPublicPath: './', // 之前是 '/' -> ./
+        assetsPublicPath: '/', // 之前是 '/' -> ./
         proxyTable: {
             "/api": {
                 target: "http://localhost:8060", // 有问题连不上
